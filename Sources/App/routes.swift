@@ -34,4 +34,18 @@ func routes(_ app: Application) throws {
         let movie = try req.content.decode(Movie.self)
         return movie;
     }
+    
+    app.get("hotels") { req async in
+
+        let sortOrder: String?=req.query["sort"]
+        print(sortOrder)
+        return HTTPStatus.ok
+    }
+    
+    app.get("hotles-query-strict") { req async throws in
+        
+        let hotelQery = try req.query.decode(HotelQuery.self)
+        return hotelQery
+        
+    }
 }
