@@ -53,4 +53,6 @@ func routes(_ app: Application) throws {
     my.get("movies") { req async -> String in
         return "my/movies"
     }
+    
+    try app.register(collection: MoviesController())
 }
