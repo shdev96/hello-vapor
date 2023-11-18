@@ -28,4 +28,10 @@ func routes(_ app: Application) throws {
     app.get("movies"){ req async in
         [Movie(title: "Batman")]
     }
+    
+    app.post("movies") { req async throws in
+    
+        let movie = try req.content.decode(Movie.self)
+        return movie;
+    }
 }
