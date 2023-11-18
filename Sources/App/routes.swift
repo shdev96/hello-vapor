@@ -25,4 +25,7 @@ func routes(_ app: Application) throws {
         return "\(customerId)"
     }
     
+    app.get("movies"){ req async in
+        [Movie(title: "Batman")]
+    }
 }
