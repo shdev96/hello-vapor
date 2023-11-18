@@ -48,4 +48,9 @@ func routes(_ app: Application) throws {
         return hotelQery
         
     }
+    
+    let my = app.grouped("my")
+    my.get("movies") { req async -> String in
+        return "my/movies"
+    }
 }
